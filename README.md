@@ -1,13 +1,20 @@
-# X-Chain NFT Marketplace
-
-X-chain NFT marketplace is designed to enable the trading of NFTs across multiple blockchain networks. This means that users could buy and sell NFTs that exist on different blockchains, such as Ethereum, Binance Smart Chain, Polkadot, or others.
-
-By enabling cross-chain trading, a cross-chain NFT marketplace could potentially provide users with access to a wider range of NFTs and assets, as well as reduce transaction costs and increase liquidity. It could also help to break down the silos between different blockchain ecosystems, allowing users to trade assets across multiple platforms.
-
-However, building a cross-chain NFT marketplace requires additional technical infrastructure and development work, such as building bridges between different blockchain networks and ensuring compatibility between different smart contract standards. Additionally, as cross-chain trading is still a relatively new and complex area, there may be additional regulatory and compliance considerations to take into account.
-
+# X-Chain Gaming NFT Marketplace
 
 ## Features
+
+Cross-chain marketplaces provides several advantages over traditional places like OpenSea :
+
+Increased liquidity: Cross-chain marketplaces allow users to trade assets across multiple blockchains, which can increase liquidity and allow for more trading opportunities.
+
+Interoperability: Cross-chain marketplaces enable the exchange of assets across different blockchains, creating interoperability between different ecosystems. This allows users to access a wider range of assets and enables them to participate in different blockchain communities.
+
+Lower fees: Cross-chain marketplaces can offer lower transaction fees compared to traditional marketplaces, as they are not limited to a single blockchain.
+
+More asset options: Cross-chain marketplaces offer a wider variety of assets to choose from, as users can trade assets from different blockchains. This can lead to more diverse investment opportunities and better portfolio management.
+
+Increased security: Cross-chain marketplaces can offer increased security by utilizing different blockchains, which can make it more difficult for hackers to attack the platform. Additionally, cross-chain marketplaces can implement security measures such as multi-signature wallets and smart contract auditing to enhance security.
+
+## How to use
 
 - View all NFTs from your collection and their status on the marketplace on the [buy](/pages/buy.tsx) page.
 
