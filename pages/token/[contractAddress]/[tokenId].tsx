@@ -1,3 +1,4 @@
+// @ts-nocheck
 import {
   MediaRenderer,
   ThirdwebNftMedia,
@@ -7,10 +8,10 @@ import {
   useValidEnglishAuctions,
   Web3Button,
 } from "@thirdweb-dev/react";
-import React, { useState } from "react";
+import React, { Attributes, useState } from "react";
 import Container from "../../../components/Container/Container";
 import { GetStaticProps, GetStaticPaths } from "next";
-import { CHAIN_ID_TO_NAME, NFT, ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { CHAIN_ID_TO_NAME, Marketplace, NFT, ThirdwebSDK } from "@thirdweb-dev/sdk";
 import {
   ETHERSCAN_URL,
   MARKETPLACE_ADDRESS,
@@ -29,7 +30,13 @@ type Props = {
   contractMetadata: any;
 };
 
+interface Attribute {
+  trait_type: string;
+  value: string;
+}
+
 const [randomColor1, randomColor2] = [randomColor(), randomColor()];
+
 
 export default function TokenPage({ nft, contractMetadata }: Props) {
   const [bidValue, setBidValue] = useState<string>();
@@ -39,6 +46,8 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
     MARKETPLACE_ADDRESS,
     "marketplace-v3"
   );
+
+  console.log(marketplace?.directListings,"Marketplace.directListings");
 
   // Connect to NFT Collection smart contract
   const { contract: nftCollection } = useContract(NFT_COLLECTION_ADDRESS);
@@ -55,6 +64,21 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
       tokenContract: NFT_COLLECTION_ADDRESS,
       tokenId: nft.metadata.id,
     });
+    
+
+    async function getAllValidOffers(walletAddress : any, contractAddress, tokenId, start, count) {
+      const offers = await marketplace?.offers.getAllValid({
+        offeror: walletAddress, // Offers made by this wallet address
+        seller: walletAddress, // Offers on items being sold by this wallet address
+        tokenContract: contractAddress, // Offers on items from this contract
+        tokenId: tokenId, // Offers on this specific token
+        start: start, // Pagination: Start from this index
+        count: count, // Pagination: Return this many results
+      });
+    
+      return offers;
+    }
+    
 
   // Load historical transfer events: TODO - more event types like sale
   const { data: transferEvents, isLoading: loadingTransferEvents } =
@@ -133,16 +157,20 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
 
               <div className={styles.traitsContainer}>
                 {Object.entries(nft?.metadata?.attributes || {}).map(
-                  ([key, value]) => (
-                    <div className={styles.traitContainer} key={key}>
-                      <p className={styles.traitName}>{key}</p>
-                      <p className={styles.traitValue}>
-                        {value?.toString() || ""}
-                      </p>
-                    </div>
-                  )
+                  ([key, value]) => {
+                    if (value instanceof Attribute) {
+                      return (
+                        <div className={styles.traitContainer} key={key}>
+                          <p className={styles.traitName}>{value.trait_type}</p>
+                          <p className={styles.traitValue}>{value.value}</p>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }
                 )}
               </div>
+
 
               <h3 className={styles.descriptionTitle}>History</h3>
 
@@ -192,6 +220,24 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
                   </div>
                 ))}
               </div>
+
+              <button onClick={async () => {
+                  await getAllValidOffers( 
+                    "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb",
+                    "0x60aDe2DBFC12fe45035EA9641e22952a8876410b", 
+                    "0", 
+                    0, 
+                    100, );
+              }}>Get Offers</button>
+              
+              {/* const offers = await getAllValidOffers( 
+                "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb"
+                "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb",
+                "0x60aDe2DBFC12fe45035EA9641e22952a8876410b", 
+                "0", 
+                0, 
+                100, ); */}
+
             </div>
           </div>
 
@@ -359,7 +405,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
-  const nft = await contract.erc1155.get(tokenId);
+  const nft = await contract.erc721.get(tokenId);
 
   let contractMetadata;
 
@@ -381,7 +427,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
 
-  const nfts = await contract.erc1155.getAll();
+  const nfts = await contract.erc721.getAll();
 
   const paths = nfts.map((nft) => {
     return {
