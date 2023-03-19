@@ -22,6 +22,8 @@ Increased security: Cross-chain marketplaces can offer increased security by uti
 
 - View all NFTs a user owns from your collection on the [profile](/pages/profile/%5Baddress%5D.tsx) pages.
 
+- Note for the NFT's to be visible on the Sell Page, you must connect your wallet first.
+
 - Buy NFTs directly from the marketplace on the [item](/pages/token/%5BcontractAddress%5D/%5BtokenId%5D.tsx) pages.
 
 - Place bids/offers on NFTs from the marketplace on the [item](/pages/token/%5BcontractAddress%5D/%5BtokenId%5D.tsx) pages.
