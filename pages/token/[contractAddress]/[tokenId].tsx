@@ -17,13 +17,13 @@ import {
   MARKETPLACE_ADDRESS,
   NETWORK,
   NFT_COLLECTION_ADDRESS,
-} from "../../../const/contractAddresses";
+} from "../../../consts/contractAddresses";
 import styles from "../../../styles/Token.module.css";
 import Link from "next/link";
-import randomColor from "../../../util/randomColor";
+import randomColor from "../../../utils/randomColor";
 import Skeleton from "../../../components/Skeleton/Skeleton";
 import toast, { Toaster } from "react-hot-toast";
-import toastStyle from "../../../util/toastConfig";
+import toastStyle from "../../../utils/toastConfig";
 
 type Props = {
   nft: NFT;

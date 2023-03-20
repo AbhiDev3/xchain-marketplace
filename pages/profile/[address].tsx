@@ -13,9 +13,9 @@ import Skeleton from "../../components/Skeleton/Skeleton";
 import {
   MARKETPLACE_ADDRESS,
   NFT_COLLECTION_ADDRESS,
-} from "../../const/contractAddresses";
+} from "../../consts/contractAddresses";
 import styles from "../../styles/Profile.module.css";
-import randomColor from "../../util/randomColor";
+import randomColor from "../../utils/randomColor";
 
 const [randomColor1, randomColor2, randomColor3, randomColor4] = [
   randomColor(),

@@ -11,16 +11,22 @@
     "deploy": "next build && next export && npx thirdweb@latest upload out"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^0.12.1",
     "@thirdweb-dev/chains": "^0.1.2",
     "@thirdweb-dev/react": "^3.9",
     "@thirdweb-dev/sdk": "^3.9",
     "ethers": "^5.7.2",
+    "formik": "^2.2.9",
     "next": "^13",
     "nextjs-progressbar": "^0.0.16",
     "react": "^18.2",
     "react-dom": "^18.2",
     "react-hook-form": "^7.43.0",
-    "react-hot-toast": "^2.4.0"
+    "react-hot-toast": "^2.4.0",
+    "@headlessui/react": "^1.7.8",
+    "@hyperlane-xyz/hyperlane-token": "^1.2.0",
+    "@hyperlane-xyz/sdk": "^1.2.0",
+    "@hyperlane-xyz/widgets": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.11",

@@ -13,10 +13,10 @@ import {
 import {
   MARKETPLACE_ADDRESS,
   NFT_COLLECTION_ADDRESS,
-} from "../../const/contractAddresses";
+} from "../../consts/contractAddresses";
 import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
-import toastStyle from "../../util/toastConfig";
+import toastStyle from "../../utils/toastConfig";
 
 type Props = {
   nft: NFTType;

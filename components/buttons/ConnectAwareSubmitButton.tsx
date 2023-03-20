@@ -1,3 +1,4 @@
+ // @ts-nocheck
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 import { useFormikContext } from 'formik';
 import { useCallback } from 'react';
