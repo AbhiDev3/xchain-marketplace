@@ -30,7 +30,7 @@ type Props = {
   contractMetadata: any;
 };
 
-interface Attribute {
+interface Attributes {
   trait_type: string;
   value: string;
 }
@@ -158,7 +158,7 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
               <div className={styles.traitsContainer}>
                 {Object.entries(nft?.metadata?.attributes || {}).map(
                   ([key, value]) => {
-                    if (value instanceof Attribute) {
+                    if (value instanceof Attributes) {
                       return (
                         <div className={styles.traitContainer} key={key}>
                           <p className={styles.traitName}>{value.trait_type}</p>
