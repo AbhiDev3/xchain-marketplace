@@ -8,7 +8,7 @@ import {
   useValidEnglishAuctions,
   Web3Button,
 } from "@thirdweb-dev/react";
-import React, { Attributes, useState } from "react";
+import React, {  useState } from "react";
 import Container from "../../../components/Container/Container";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { CHAIN_ID_TO_NAME, Marketplace, NFT, ThirdwebSDK } from "@thirdweb-dev/sdk";
@@ -230,14 +230,6 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
                     100, );
               }}>Get Offers</button>
               
-              {/* const offers = await getAllValidOffers( 
-                "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb"
-                "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb",
-                "0x60aDe2DBFC12fe45035EA9641e22952a8876410b", 
-                "0", 
-                0, 
-                100, ); */}
-
             </div>
           </div>
 
