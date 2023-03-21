@@ -1,7 +1,7 @@
 import { BigNumber, providers } from 'ethers';
 
 import { config } from '../consts/config';
-import { getChainExplorerUrl } from '../features/chains/metadata';
+import { getChainExplorerUrl } from '../components/features/chains/metadata';
 
 import { logger } from './logger';
 import { retryAsync } from './retry';
