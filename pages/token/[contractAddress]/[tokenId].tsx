@@ -30,10 +30,6 @@ type Props = {
   contractMetadata: any;
 };
 
-interface Attributes {
-  trait_type: string;
-  value: string;
-}
 
 const [randomColor1, randomColor2] = [randomColor(), randomColor()];
 
@@ -137,6 +133,10 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
     }
     return txResult;
   }
+  interface Attributes {
+    trait_type: string;
+    value: string;
+  }
 
   return (
     <>
@@ -157,8 +157,8 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
 
               <div className={styles.traitsContainer}>
                 {Object.entries(nft?.metadata?.attributes || {}).map(
-                  ([key, value]) => {
-                    if (value instanceof Attributes) {
+                  ([key, value]: [string, Attributes]) => {
+                    if (value) {
                       return (
                         <div className={styles.traitContainer} key={key}>
                           <p className={styles.traitName}>{value.trait_type}</p>
