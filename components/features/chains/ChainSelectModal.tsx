@@ -1,6 +1,6 @@
 import { ChainLogo } from '@hyperlane-xyz/widgets';
 
-import { Modal } from '../../components/layout/Modal';
+import { Modal } from '../../../components/layout/Modal';
 
 import { getChainDisplayName, getChainMetadata } from './metadata';
 
