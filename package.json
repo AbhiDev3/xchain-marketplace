@@ -15,7 +15,7 @@
     "@hyperlane-xyz/hyperlane-token": "^1.2.0",
     "@hyperlane-xyz/sdk": "^1.2.0",
     "@hyperlane-xyz/widgets": "^1.2.0",
-    "@rainbow-me/rainbowkit": "^0.12.1",
+    "@rainbow-me/rainbowkit": "^0.8.1",
     "@thirdweb-dev/chains": "^0.1.2",
     "@thirdweb-dev/react": "^3.9",
     "@thirdweb-dev/sdk": "^3.9",
