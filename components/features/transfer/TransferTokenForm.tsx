@@ -5,11 +5,11 @@ import { useAccount } from 'wagmi';
 
 import { WideChevron } from '@hyperlane-xyz/widgets';
 
-import { ConnectAwareSubmitButton } from '../../components/buttons/ConnectAwareSubmitButton';
-import { IconButton } from '../../components/buttons/IconButton';
-import { SolidButton } from '../../components/buttons/SolidButton';
-import { ChevronIcon } from '../../components/icons/Chevron';
-import { TextField } from '../../components/input/TextField';
+import { ConnectAwareSubmitButton } from '../../../components/buttons/ConnectAwareSubmitButton';
+import { IconButton } from '../../../components/buttons/IconButton';
+import { SolidButton } from '../../../components/buttons/SolidButton';
+import { ChevronIcon } from '../../../components/icons/Chevron';
+import { TextField } from '../../../components/input/TextField';
 import { config } from '../../consts/config';
 import SwapIcon from '../../images/icons/swap.svg';
 import { Color } from '../../styles/Color';
@@ -263,7 +263,7 @@ function TokenBalance({ label, balance }: { label: string; balance?: string | nu
   return <div className="text-xs text-gray-500">{`${label}: ${rounded}`}</div>;
 }
 
-function useSelfTokenBalance(tokenRoutes) {
+function useSelfTokenBalance(tokenRoutes : any) {
   const { values } = useFormikContext<TransferFormValues>();
   const { sourceChainId, destinationChainId, tokenAddress } = values;
   const route = getTokenRoute(sourceChainId, destinationChainId, tokenAddress, tokenRoutes);

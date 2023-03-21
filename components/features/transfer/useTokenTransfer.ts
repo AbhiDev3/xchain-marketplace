@@ -1,11 +1,11 @@
 import { sendTransaction, switchNetwork } from '@wagmi/core';
 import { useCallback, useState } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import { useChainId } from 'wagmi';
 
 import { utils } from '@hyperlane-xyz/utils';
 
-import { toastTxSuccess } from '../../components/toast/TxSuccessToast';
+import { toastTxSuccess } from '../../../components/toast/TxSuccessToast';
 import { toWei } from '../../utils/amount';
 import { logger } from '../../utils/logger';
 import { sleep } from '../../utils/timeout';

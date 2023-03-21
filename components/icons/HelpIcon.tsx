@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
 import Question from '../../images/icons/question-circle.svg';
 import { IconButton } from '../buttons/IconButton';
 
 function _HelpIcon({ text, size = 20 }: { text: string; size?: number }) {
   const onClick = () => {
-    toast.info(text, { autoClose: 8000 });
+    toast.success(text);
   };
 
   return (

@@ -1,11 +1,14 @@
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 
-import { getChainExplorerUrl } from '../../features/chains/metadata';
+import { getChainExplorerUrl } from '../features/chains/metadata';
 
 export function toastTxSuccess(msg: string, txHash: string, chainId: number) {
-  toast.success(<TxSuccessToast msg={msg} txHash={txHash} chainId={chainId} />, {
-    autoClose: 12000,
-  });
+  toast.success(<TxSuccessToast msg={msg} txHash={txHash} chainId={chainId} />
+  );
+
+  // toast.success(<TxSuccessToast msg={msg} txHash={txHash} chainId={chainId} />, {
+  //   autoClose: 12000,
+  // });
 }
 
 export function TxSuccessToast({

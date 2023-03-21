@@ -1,8 +1,8 @@
 // import { IconButton } from '../../components/buttons/IconButton';
 import { WideChevron } from '@hyperlane-xyz/widgets';
 
-import { Spinner } from '../../components/animation/Spinner';
-import { Card } from '../../components/layout/Card';
+import { Spinner } from '../../../components/animation/Spinner';
+import { Card } from '../../../components/layout/Card';
 import { useTokenRoutes } from '../tokens/routes';
 
 // import GearIcon from '../../images/icons/gear.svg';

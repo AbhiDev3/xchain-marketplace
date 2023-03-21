@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { IconButton } from '../../components/buttons/IconButton';
 import { config } from '../../consts/config';
 import { links } from '../../consts/links';
-import InfoCircle from '../../images/icons/info-circle.svg';
-import XCircle from '../../images/icons/x-circle.svg';
+import InfoCircle from '../../components/images/icons/info-circle.svg';
+import XCircle from '../../components/images/icons/x-circle.svg';
 
 export function TipCard() {
   const [show, setShow] = useState(config.showTipBox);

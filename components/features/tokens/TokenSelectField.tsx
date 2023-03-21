@@ -2,7 +2,7 @@ import { useField } from 'formik';
 import Image from 'next/image';
 import { useState } from 'react';
 
-import { TokenIcon } from '../../components/icons/TokenIcon';
+import { TokenIcon } from '../../../components/icons/TokenIcon';
 import ChevronIcon from '../../images/icons/chevron-down.svg';
 
 import { TokenListModal } from './TokenListModal';

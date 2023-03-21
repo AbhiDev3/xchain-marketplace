@@ -4,8 +4,8 @@ import { useAccount } from 'wagmi';
 import { chainIdToMetadata } from '@hyperlane-xyz/sdk';
 import { MessageStatus, MessageTimeline, useMessageTimeline } from '@hyperlane-xyz/widgets';
 
-import { Spinner } from '../../components/animation/Spinner';
-import { Modal } from '../../components/layout/Modal';
+import { Spinner } from '../../../components/animation/Spinner';
+import { Modal } from '../../../components/layout/Modal';
 import { links } from '../../consts/links';
 import { trimLeading0x } from '../../utils/addresses';
 import { RouteType, RoutesMap, getTokenRoute } from '../tokens/routes';

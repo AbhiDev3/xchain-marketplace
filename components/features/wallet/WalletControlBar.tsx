@@ -2,13 +2,13 @@ import { Menu, Transition } from '@headlessui/react';
 import { useConnectModal } from '@rainbow-me/rainbowkit';
 import Image from 'next/image';
 import { Fragment } from 'react';
-import { toast } from 'react-toastify';
+import { toast } from 'react-hot-toast';
 import { useAccount, useDisconnect, useNetwork } from 'wagmi';
 
 import { ChainLogo } from '@hyperlane-xyz/widgets';
 
-import { SolidButton } from '../../components/buttons/SolidButton';
-import { Identicon } from '../../components/icons/Identicon';
+import { SolidButton } from '../../../components/buttons/SolidButton';
+import { Identicon } from '../../../components/icons/Identicon';
 import ChevronDown from '../../images/icons/chevron-down.svg';
 import CopyStack from '../../images/icons/copy-stack.svg';
 import Logout from '../../images/icons/logout.svg';

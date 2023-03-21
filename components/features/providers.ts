@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { providers } from 'ethers';
 
 import { getChainRpcUrl } from './chains/metadata';

@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
 
-import { TokenIcon } from '../../components/icons/TokenIcon';
-import { TextInput } from '../../components/input/TextField';
-import { Modal } from '../../components/layout/Modal';
+import { TokenIcon } from '../../../components/icons/TokenIcon';
+import { TextInput } from '../../../components/input/TextField';
+import { Modal } from '../../../components/layout/Modal';
 
 import { getAllTokens } from './metadata';
 import { RoutesMap, hasTokenRoute } from './routes';

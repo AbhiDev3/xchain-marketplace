@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, PropsWithChildren } from 'react';
 
-import XCircle from '../../images/icons/x-circle.svg';
+import XCircle from '../../components/images/icons/x-circle.svg';
 import { IconButton } from '../buttons/IconButton';
 
 export function Modal({

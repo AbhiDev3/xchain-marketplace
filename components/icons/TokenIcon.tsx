@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { memo } from 'react';
 
-import { ListedToken } from '../../features/tokens/types';
+import { ListedToken } from '../features/tokens/types';
 import { isValidHttpsUrl } from '../../utils/url';
 import { ErrorBoundary } from '../errors/ErrorBoundary';
 

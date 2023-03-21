@@ -1,3 +1,4 @@
+// @ts-nocheck
 import jazzicon from '@metamask/jazzicon';
 import { CSSProperties, memo } from 'react';
 
