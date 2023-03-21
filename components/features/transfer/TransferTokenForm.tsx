@@ -345,21 +345,21 @@ function ReviewDetails({ visible, tokenRoutes }: { visible: boolean; tokenRoutes
       } overflow-hidden transition-all`}
     >
       <label className="mt-4 block uppercase text-sm text-gray-500 pl-0.5">Transactions</label>
-      <div className="mt-1.5 px-2.5 py-2 space-y-2 rounded border border-gray-400 bg-gray-150 text-sm break-all">
+      <div className="mt-1.5 px-2.5 py-2 space-y-2 rounded border border-gray-400 bg-gray-150 text-sm break-all text-amber-700">
         {requiresApprove && (
           <div>
             <h4>Transaction 1: Approve Transfer</h4>
             <div className="mt-1.5 ml-1.5 pl-2 border-l border-gray-300 space-y-1.5 text-xs">
-              <p>{`Token Address: ${tokenAddress}`}</p>
-              <p>{`Collateral Address: ${route?.hypCollateralAddress}`}</p>
+              <p className='text-green-600'>{`Token Address: ${tokenAddress}`}</p>
+              <p className='text-green-600'>{`Collateral Address: ${route?.hypCollateralAddress}`}</p>
             </div>
           </div>
         )}
         <div>
           <h4>{`Transaction${requiresApprove ? ' 2' : ''}: Transfer Remote`}</h4>
           <div className="mt-1.5 ml-1.5 pl-2 border-l border-gray-300 space-y-1.5 text-xs">
-            <p>{`Remote Token: ${route?.destTokenAddress}`}</p>
-            <p>{`Amount (wei): ${weiAmount}`}</p>
+            <p className='text-green-600'>{`Remote Token: ${route?.destTokenAddress}`}</p>
+            <p className='text-green-600'>{`Amount (wei): ${weiAmount}`}</p>
           </div>
         </div>
       </div>

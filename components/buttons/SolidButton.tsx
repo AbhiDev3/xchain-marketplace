@@ -23,7 +23,7 @@ export function SolidButton(
     ...passThruProps
   } = props;
   const color = _color ?? 'blue';
-
+  console.log(color,"color");
   const base = 'flex items-center justify-center rounded-md transition-all duration-500';
   let baseColors, onHover, onActive;
   if (color === 'blue') {

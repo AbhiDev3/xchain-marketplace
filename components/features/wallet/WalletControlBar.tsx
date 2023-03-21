@@ -73,7 +73,7 @@ function AccountDropdown() {
           title="Choose wallet"
           icon={<Image src={Wallet} alt="" width={16} height={16} />}
         >
-          <div className="ml-1.5 text-white text-xs sm:text-sm">Connect Wallet</div>
+          <div className="ml-1.5 text-sky-400 text-xs sm:text-sm">Connect Wallet</div>
         </SolidButton>
       )}
 
