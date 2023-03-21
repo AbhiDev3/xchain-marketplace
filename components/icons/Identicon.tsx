@@ -1,5 +1,5 @@
 // @ts-nocheck
-import jazzicon from '@metamask/jazzicon';
+import Jazzicon from 'react-jazzicon'
 import { CSSProperties, memo } from 'react';
 
 import { isValidAddress, normalizeAddress } from '../../utils/addresses';
@@ -21,7 +21,7 @@ function _Identicon({ address, size: _size, styles }: Props) {
 
   if (!isValidAddress(address)) return null;
 
-  const jazziconResult = jazzicon(size, addressToSeed(address));
+  const jazziconResult = Jazzicon(size, addressToSeed(address));
 
   return (
     <div

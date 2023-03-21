@@ -971,13 +971,6 @@
   "resolved" "https://registry.npmjs.org/@magic-sdk/types/-/types-9.1.0.tgz"
   "version" "9.1.0"
 
-"@metamask/jazzicon@https://github.com/jmrossy/jazzicon#7a8df28974b4e81129bfbe3cab76308b889032a6":
-  "integrity" "sha512-XPeeSbhfL8TW2wjsJ0ayDh/KrWqd4IU6iPWZcMvY4SSYLJnP1rEXB4GMYoBLO35s9BrGwZH1eh0FmTs9QNA0gg=="
-  "resolved" "git+ssh://git@github.com/jmrossy/jazzicon.git#7a8df28974b4e81129bfbe3cab76308b889032a6"
-  "version" "2.1.0"
-  dependencies:
-    "mersenne-twister" "^1.1.0"
-
 "@metamask/safe-event-emitter@^2.0.0", "@metamask/safe-event-emitter@2.0.0":
   "integrity" "sha512-/kSXhY692qiV1MXu6EeOZvg5nECLclxNXcKCxJ3cXQgYuRymRHpdx/t7JXfsK+JLjwA1e1c1/SBrlQYpusC29Q=="
   "resolved" "https://registry.npmjs.org/@metamask/safe-event-emitter/-/safe-event-emitter-2.0.0.tgz"
@@ -6000,7 +5993,7 @@
   dependencies:
     "safe-buffer" "^5.1.0"
 
-"react-dom@^16 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18", "react-dom@^18.2", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@>=17", "react-dom@>=18.0.0":
+"react-dom@^16 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^18", "react-dom@^18.2", "react-dom@^18.2.0", "react-dom@>=16", "react-dom@>=17", "react-dom@>=17.0.0", "react-dom@>=18.0.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"
@@ -6029,6 +6022,13 @@
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
+
+"react-jazzicon@^1.0.4":
+  "integrity" "sha512-/3kWv5vtAhI18GBFoqjpxRTtL+EImuB73PAC02r/zJQ6E+PAUmoBx8edYvTCIYHwS01uFf6N3elTDqSrVPwg4w=="
+  "resolved" "https://registry.npmjs.org/react-jazzicon/-/react-jazzicon-1.0.4.tgz"
+  "version" "1.0.4"
+  dependencies:
+    "mersenne-twister" "^1.1.0"
 
 "react-remove-scroll-bar@^2.3.3":
   "integrity" "sha512-63C4YQBUt0m6ALadE9XV56hV8BgJWDmmTPY758iIJjfQKt2nYwoUrPk0LXRXcB/yIj82T1/Ixfdpdk68LwIB0A=="
