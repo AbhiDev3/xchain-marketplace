@@ -26,7 +26,8 @@
     "@headlessui/react": "^1.7.8",
     "@hyperlane-xyz/hyperlane-token": "^1.2.0",
     "@hyperlane-xyz/sdk": "^1.2.0",
-    "@hyperlane-xyz/widgets": "^1.2.0"
+    "@hyperlane-xyz/widgets": "^1.2.0",
+    "wagmi": "0.11.7"
   },
   "devDependencies": {
     "@types/node": "^18.11.11",
