@@ -12,7 +12,7 @@ import { ChevronIcon } from '../../../components/icons/Chevron';
 import { TextField } from '../../../components/input/TextField';
 import { config } from '../../consts/config';
 import SwapIcon from '../../images/icons/swap.svg';
-import { Color } from '../../styles/Color';
+import { Color } from '../../../styles/Color';
 import { isValidAddress } from '../../utils/addresses';
 import { fromWeiRounded, toWei, tryParseAmount } from '../../utils/amount';
 import { logger } from '../../utils/logger';

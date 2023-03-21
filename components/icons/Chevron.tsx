@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { Color } from '../styles/Color';
+import { Color } from '../../styles/Color';
 
 interface Props {
   width?: string | number;

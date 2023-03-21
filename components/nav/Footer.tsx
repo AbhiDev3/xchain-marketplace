@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { links } from '../../consts/links';
-import Logo from '../../images/logos/app-logo.svg';
-import Discord from '../../images/logos/discord.svg';
-import Github from '../../images/logos/github.svg';
-import Medium from '../../images/logos/medium.svg';
-import Twitter from '../../images/logos/twitter.svg';
+import { links } from '../../components/consts/links';
+import Logo from '../../components/images/logos/app-logo.svg';
+import Discord from '../../components/images/logos/discord.svg';
+import Github from '../../components/images/logos/github.svg';
+import Medium from '../../components/images/logos/medium.svg';
+import Twitter from '../../components/images/logos/twitter.svg';
 
 export function Footer() {
   return (
@@ -14,7 +14,7 @@ export function Footer() {
       <div className="flex flex-row justify-between items-center gap-6 sm:gap-0">
         <div className="flex items-center pt-2">
           <div className="flex">
-            <Image src={Logo} width={45} height={45} alt="" />
+            <Image src={Logo} width={45} height={45} alt="app logo" />
           </div>
           <div className="hidden sm:flex flex-col ml-3">
             <p className="text-sm font-light leading-5">

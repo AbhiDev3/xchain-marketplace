@@ -12,12 +12,9 @@ export function TipCard() {
   if (!show) return null;
   return (
     <div className="relative px-3 py-3 w-100 sm:w-[31rem] bg-blue-500 shadow-lg rounded opacity-95">
-      <h2 className="text-white sm:text-lg">Bridge Tokens with Hyperlane Warp Routes!</h2>
+      <h2 className="text-white sm:text-lg">Bridge Your NFT's across Multiple Chans with Hyperlane Warp Routes!</h2>
       <div className="flex items-end justify-between">
-        <p className="text-white mt-1.5 text-xs sm:text-sm max-w-[70%]">
-          Warp Routes make it easy to permisionlessly take your tokens interchain. Fork this
-          template to get started!
-        </p>
+
         <a
           href={links.github}
           target="_blank"
