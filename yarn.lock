@@ -6889,18 +6889,7 @@
     "@ethersproject/providers" "^5.5.1"
     "eventemitter3" "^4.0.7"
 
-"wagmi@^0.2.28":
-  "integrity" "sha512-ovB/3ULocxt4IojC7t2aqb1tPNk3Or9+hrUiLkf15yDLeUdn4murot1lpunKZHrlaIsCGwNknW8hsGY+47btCw=="
-  "resolved" "https://registry.npmjs.org/wagmi/-/wagmi-0.2.28.tgz"
-  "version" "0.2.28"
-  dependencies:
-    "@coinbase/wallet-sdk" "^3.0.8"
-    "@ethersproject/providers" "^5.5.1"
-    "@walletconnect/ethereum-provider" "1.7.5"
-    "wagmi-core" "0.1.22"
-    "walletlink" "^2.5.0"
-
-"wagmi@0.11.7", "wagmi@0.12.x":
+"wagmi@^0.11.7", "wagmi@0.12.x":
   "integrity" "sha512-IiB1TxTVn+xvjju3ZNQfiwfiB6EZj1h3CO7Zt8q0PEDRN76jqniaeOV7QAnfBgtbqmVh2co4Miaz1rRtvVPMTQ=="
   "resolved" "https://registry.npmjs.org/wagmi/-/wagmi-0.11.7.tgz"
   "version" "0.11.7"
@@ -6911,6 +6900,17 @@
     "@wagmi/core" "0.9.7"
     "abitype" "^0.3.0"
     "use-sync-external-store" "^1.2.0"
+
+"wagmi@^0.2.28":
+  "integrity" "sha512-ovB/3ULocxt4IojC7t2aqb1tPNk3Or9+hrUiLkf15yDLeUdn4murot1lpunKZHrlaIsCGwNknW8hsGY+47btCw=="
+  "resolved" "https://registry.npmjs.org/wagmi/-/wagmi-0.2.28.tgz"
+  "version" "0.2.28"
+  dependencies:
+    "@coinbase/wallet-sdk" "^3.0.8"
+    "@ethersproject/providers" "^5.5.1"
+    "@walletconnect/ethereum-provider" "1.7.5"
+    "wagmi-core" "0.1.22"
+    "walletlink" "^2.5.0"
 
 "walletlink@^2.5.0":
   "integrity" "sha512-PBJmK5tZmonwKPABBI2/optaZ11O4kKmkmnU5eLKhk4XRlal5qJ1igZ4U5j3w6w8wxxdhCWpLMHzGWt3n/p7mw=="

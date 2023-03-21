@@ -10,7 +10,6 @@ import { publicProvider } from 'wagmi/providers/public';
 import { RainbowKitProvider, connectorsForWallets, lightTheme } from '@rainbow-me/rainbowkit';
 import '@rainbow-me/rainbowkit/styles.css';
 import {
-  argentWallet,
   coinbaseWallet,
   injectedWallet,
   ledgerWallet,
@@ -18,7 +17,6 @@ import {
   omniWallet,
   rainbowWallet,
   trustWallet,
-  walletConnectWallet,
 } from '@rainbow-me/rainbowkit/wallets';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // import { ToastContainer, Zoom, toast } from 'react-hot-toast';
@@ -39,7 +37,6 @@ const connectors = connectorsForWallets([
     wallets: [
       metaMaskWallet(connectorConfig),
       injectedWallet(connectorConfig),
-      walletConnectWallet(connectorConfig),
       ledgerWallet(connectorConfig),
     ],
   },
@@ -50,7 +47,6 @@ const connectors = connectorsForWallets([
       omniWallet(connectorConfig),
       rainbowWallet(connectorConfig),
       trustWallet(connectorConfig),
-      argentWallet(connectorConfig),
     ],
   },
 ]);
