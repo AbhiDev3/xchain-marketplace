@@ -17,9 +17,12 @@ type Props = {
   disabled?: boolean;
 };
 
+
+
 export function ChainSelectField({ name, label, chainIds, onChange, disabled }: Props) {
   const [field, , helpers] = useField<number>(name);
 
+  console.log(chainIds,"chainid");
   const handleChange = (newChainId: number) => {
     helpers.setValue(newChainId);
     if (onChange) onChange(newChainId);
