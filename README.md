@@ -1,5 +1,7 @@
 # X-Chain Gaming NFT Marketplace
 
+![marketplace](https://user-images.githubusercontent.com/95926324/227322157-928accde-e02c-4369-bfa9-0f15aa2b7258.png)
+
 ## Features
 
 Cross-chain marketplaces provides several advantages over traditional places like OpenSea :
