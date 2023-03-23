@@ -9,6 +9,8 @@ import {
 
 import CustomChainConfig from '../../consts/chains.json';
 
+console.log(CustomChainConfig,"custom");
+
 export type CustomChainMetadata = ChainMetadata & {
   logoImgSrc: string;
 };

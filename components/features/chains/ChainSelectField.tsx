@@ -6,7 +6,8 @@ import { ChainLogo } from '@hyperlane-xyz/widgets';
 
 import ChevronIcon from '../../images/icons/chevron-down.svg';
 
-import { ChainSelectGridModal } from './ChainSelectModal';
+// import { ChainSelectGridModal } from './ChainSelectModal';
+import { ChainSelectListModal } from './ChainSelectModal';
 import { getChainDisplayName } from './metadata';
 
 type Props = {
@@ -56,10 +57,16 @@ export function ChainSelectField({ name, label, chainIds, onChange, disabled }: 
         </div>
         <Image src={ChevronIcon} width={12} height={8} alt="" />
       </button>
-      <ChainSelectGridModal
+      {/* <ChainSelectGridModal
         isOpen={isModalOpen}
         close={() => setIsModalOpen(false)}
         // chainIds={chainIds}
+        onSelect={handleChange}
+      /> */}
+      <ChainSelectListModal
+        isOpen={isModalOpen}
+        close={() => setIsModalOpen(false)}
+        chainIds={chainIds}
         onSelect={handleChange}
       />
     </div>
