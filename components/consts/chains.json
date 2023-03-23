@@ -1,23 +1,23 @@
 {
-  "mycustomchain": {
-    "chainId": 1234,
-    "name": "mycustomchain",
-    "displayName": "My Chain",
+  "scroll-alpha": {
+    "chainId": 534353,
+    "name": "scroll-alpha",
+    "displayName": "Scroll-alpha",
     "nativeToken": { "name": "Ether", "symbol": "ETH", "decimals": 18 },
-    "publicRpcUrls": [{ "http": "https://mycustomchain-rpc.com" }],
+    "publicRpcUrls": [{"http":"https://alpha-rpc.scroll.io/l2"}],
     "blockExplorers": [
       {
-        "name": "MyCustomScan",
-        "url": "https://mycustomchain-scan.com",
-        "apiUrl": "https://api.mycustomchain-scan.com",
+        "name": "Goerliscan",
+        "url": "https://goerli.etherscan.io",
+        "apiUrl": "https://api-goerli.etherscan.io",
         "family": "etherscan"
       }
     ],
     "blocks": {
-      "confirmations": 1,
-      "reorgPeriod": 1,
-      "estimateBlockTime": 10
-    },
-    "logoImgSrc": "/logo.svg"
+      "confirmations": 0,
+      "reorgPeriod": 0,
+      "estimateBlockTime": 0
+    }
   }
 }
+
