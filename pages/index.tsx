@@ -2,7 +2,8 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-
+import Xchain from "../components/spline/Xchain";
+import Spline from "@splinetool/react-spline";
 /**
  * Landing page with a simple gradient background and a hero asset.
  */
@@ -39,8 +40,10 @@ const Home: NextPage = () => {
             <div className={styles.heroBody}>
               <h1 className={styles.heroTitle}>
                 <span className={styles.heroTitleGradient}>
-                  X-Chain NFT Gaming Marketplace
+                  X-Chain Gaming NFT 
                 </span>
+                <Xchain />
+                Marketplace
                 <br />
                 Earn with your NFT Characters.
               </h1>
