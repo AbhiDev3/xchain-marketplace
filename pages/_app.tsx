@@ -1,4 +1,3 @@
-// @ts-nocheck
 import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { Navbar } from "../components/Navbar/Navbar";
@@ -28,8 +27,8 @@ import { Color } from '../styles/Color';
 import { ScrollAlphaTestnet } from "@thirdweb-dev/chains";
 // wagmi configs setup
 const { chains, provider } = configureChains(getWagmiChainConfig(), [publicProvider()]);
-
-
+import { useContract } from "@thirdweb-dev/react";
+import { NFT_COLLECTION_ADDRESS } from "../consts/contractAddresses";
 
 const connectorConfig = {
   appName: 'X-chain Gaming NFT',
@@ -74,41 +73,10 @@ const reactQueryClient = new QueryClient({
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const [activeChain, setActiveChain] = useState<string>(NETWORK);
+  // const [activeChain, setActiveChain] = useState<string>(NETWORK);
+  const [signer_address,setSigner_address]= useState('0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb');
 
-  useEffect(() => {
-    if (window.ethereum) {
-      const ethereum = window.ethereum;
-      ethereum.request({ method: 'net_version' })
-        .then((networkId: string) => {
-          console.log(activeChain,networkId);
-          switch (networkId) {
-            case '1':
-              setActiveChain('mainnet');
-              break;
-            case '1287':
-              setActiveChain('moonbase-alpha');
-              break;
-            case '4':
-              setActiveChain('rinkeby');
-              break;
-            case '5':
-              setActiveChain('goerli');
-              break;
-            case '534353':
-              setActiveChain('ScrollAlphaTestnet');
-              break;
-            default:
-              setActiveChain(NETWORK);
-          }
-        })
-        .catch((error: any) => {
-          console.log('Error getting network ID:', error);
-          setActiveChain(NETWORK);
-        });
-    }
-  }, []);
-  console.log(activeChain);
+  // console.log(activeChain);
   return (
     <ThirdwebProvider activeChain={ScrollAlphaTestnet}>
       {/* Progress bar when navigating between pages */}
@@ -133,7 +101,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           {/* Render the navigation menu above each component */}
           <Navbar />
           {/* Render the actual component (page) */}
-          <Component {...pageProps} />
+          <Component {...pageProps}   />
           </QueryClientProvider>
           {/* <ToastContainer transition={Zoom} position={toast.POSITION.BOTTOM_RIGHT} limit={2} /> */}
           </RainbowKitProvider>
