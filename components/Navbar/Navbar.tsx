@@ -2,6 +2,7 @@ import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import connectToIntmax from "./pages/_app.tsx";
 
 /**
  * Navigation bar that shows up on all pages.
@@ -39,6 +40,7 @@ export function Navbar() {
         <div className={styles.navRight}>
           <div className={styles.navConnect}>
             <ConnectWallet />
+            <button onClick={connectToIntmax}>hii</button>
           </div>
           {address && (
             <Link className={styles.link} href={`/profile/${address}`}>
