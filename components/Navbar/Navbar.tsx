@@ -40,7 +40,7 @@ export function Navbar() {
         <div className={styles.navRight}>
           <div className={styles.navConnect}>
             <ConnectWallet />
-            <button onClick={connectToIntmax}>hii</button>
+            <button onClick={connectToIntmax}>Check</button>
           </div>
           {address && (
             <Link className={styles.link} href={`/profile/${address}`}>
