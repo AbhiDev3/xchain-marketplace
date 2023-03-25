@@ -16,6 +16,8 @@ More asset options: Cross-chain marketplaces offer a wider variety of assets to 
 
 Increased security: Cross-chain marketplaces can offer increased security by utilizing different blockchains, which can make it more difficult for hackers to attack the platform. Additionally, cross-chain marketplaces can implement security measures such as multi-signature wallets and smart contract auditing to enhance security.
 
+![image](https://user-images.githubusercontent.com/95926324/227724969-0730ad8b-871d-4659-9609-054d2be9831e.png)
+
 # MultiChain == Increased Liquidity across Multiple Chains
 
 Scroll NFT_CONTRACT = 0x8d72887163f8bD8A65649Ef4af37dcc21500e5A1
