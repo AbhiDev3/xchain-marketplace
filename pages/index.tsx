@@ -28,6 +28,13 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.heroAssetFrame}>.
             <Image
+              src="https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png"
+              alt="picachu"
+              height={100}
+              width={400}
+              quality={80}
+            />
+            <Image
               src="/house2.png"
               width={860}
               height={650}
