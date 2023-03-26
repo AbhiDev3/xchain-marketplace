@@ -1,6 +1,5 @@
 // @ts-nocheck
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { NFT as NFTType } from "@thirdweb-dev/sdk";
 import Head from "next/head";
 import { NFT_COLLECTION_ADDRESS } from "../consts/contractAddresses";
@@ -48,7 +47,7 @@ const Bridge721NFT = ({ nft }: Props) => {
   );
   const [domainID, setDomainID] = useState("9991");
   const [nftContract, setNftContract] = useState("0xb9ab49e306b4a5CD610821Beba2f51e8F5a3C30f");
-  const assetTokenID = nft.metadata.id;
+  const assetTokenID = nft?.metadata.id;
   // below one depends on which chain to send
   const [xChainContract, setxChainContract] = useState('');
   const [chainIdMain, setChainIdMain] = useState(80001);
@@ -349,7 +348,7 @@ const Bridge721NFT = ({ nft }: Props) => {
     <>
       <Head>
         <title>Bridge NFT - using Connext </title>
-        <meta name="description" content="Bridge NFT" />
+        <meta name="description" content="Bridge721 NFT" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
       </Head>
