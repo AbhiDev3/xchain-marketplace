@@ -66,9 +66,6 @@ import {
                     <Connect />
                   </TabPanel>
                   <TabPanel>
-                    <SignTransaction />
-                  </TabPanel>
-                  <TabPanel>
                     <SendTransaction />
                   </TabPanel>
                   <TabPanel>

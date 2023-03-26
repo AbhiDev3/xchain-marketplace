@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // console.log(activeChain);
   return (
-    <ChakraProvider theme={theme}>
+
     <ThirdwebProvider activeChain={NETWORK}>
       {/* Progress bar when navigating between pages */}
       <NextNProgress
@@ -132,14 +132,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           {/* Render the navigation menu above each component */}
           <Navbar />
           {/* Render the actual component (page) */}
+          <ChakraProvider>
           <Component {...pageProps}   />
-          <Webmax />
+          </ChakraProvider>
           </QueryClientProvider>
           {/* <ToastContainer transition={Zoom} position={toast.POSITION.BOTTOM_RIGHT} limit={2} /> */}
           </RainbowKitProvider>
         </WagmiConfig>
     </ThirdwebProvider>
-    </ChakraProvider>
   );
 }
 

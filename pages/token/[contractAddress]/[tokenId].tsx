@@ -24,6 +24,7 @@ import randomColor from "../../../utils/randomColor";
 import Skeleton from "../../../components/Skeleton/Skeleton";
 import toast, { Toaster } from "react-hot-toast";
 import toastStyle from "../../../utils/toastConfig";
+import { SignTransaction } from "../../../components/webmax/SignTransaction";
 
 type Props = {
   nft: NFT;
@@ -343,6 +344,8 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
                   Buy at asking price
                 </Web3Button>
 
+                <SignTransaction marketplace={marketplace} directListing={directListing} auctionListing= {auctionListing} />
+                
                 <div className={`${styles.listingTimeContainer} ${styles.or}`}>
                   <p className={styles.listingTime}>or</p>
                 </div>

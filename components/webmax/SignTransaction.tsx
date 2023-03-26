@@ -1,4 +1,5 @@
 /* eslint-disable */
+// @ts-nocheck
 import {
   Box,
   Button,
@@ -20,7 +21,7 @@ type Inputs = {
   gasLimit: number;
 };
 
-export const SignTransaction = () => {
+export const SignTransaction = (auctionListing , marketplace , directListing) => {
   const [result, setResult] = useState("");
   const toast = useToast();
   const {
@@ -36,26 +37,41 @@ export const SignTransaction = () => {
     gasLimit,
   }: Inputs): Promise<void> => {
     try {
+      let txResult;
+  
+      if (auctionListing?.[0]) {
+        txResult = await marketplace?.englishAuctions.buyoutAuction(
+          auctionListing[0].id
+        );
+      } else if (directListing?.[0]) {
+        txResult = await marketplace?.directListings.buyFromListing(
+          directListing[0].id,
+          1
+        );
+      } else {
+        throw new Error("No valid listing found for this NFT");
+      }
+  
       const tx = {
         to,
         value: value,
         gasLimit,
+        data: txResult.encodeABI(),
       };
-
+  
       const signer = new IntmaxWalletSigner();
-      const signature = await signer.signTransaction<NoRedirect>(tx);
-
-      setResult(signature);
-
+      const receipt = await signer.sendTransaction(tx);
+      setResult(JSON.stringify(receipt));
+  
       toast({
-        title: "Success Sign Transaction",
+        title: "Success Send Transaction",
         position: "top",
         status: "success",
         isClosable: true,
       });
     } catch (error) {
       console.error(error);
-
+  
       toast({
         title: (error as Error).message,
         position: "top",
@@ -64,7 +80,7 @@ export const SignTransaction = () => {
       });
     }
   };
-
+  
   const handleClick = (key: "to" | "value" | "gasLimit"): void => void resetField(key);
 
   return (
