@@ -57,12 +57,20 @@ const Bridge721NFT = ({ nft }: Props) => {
   const [isNFTBridged, setIsNFTBridged] = useState(false);
   const [relayerFee , setRelayerFee] = useState();
   const [loading, setLoading] = useState(false);
-
+  const [signer, setSigner] = useState();
   const [signer_address, setSigner_address] = useState("0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb");
-  const provider = new ethers.providers.Web3Provider(window?.ethereum);
+  
 
-// Get the signer
-  const signer = provider.getSigner();
+
+  useEffect(() => {
+    // Access the window object here
+    const provider = new ethers.providers.Web3Provider(window?.ethereum);
+    // Get the signer
+    const signer = provider.getSigner();
+    setSigner(signer);
+  }, []);
+
+
 
   
   // async function estimateRelayerFee(sdkBase) {
