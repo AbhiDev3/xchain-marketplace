@@ -46,7 +46,7 @@ const Bridge721NFT = ({ nft }: Props) => {
     NFT_COLLECTION_ADDRESS
   );
   const [domainID, setDomainID] = useState("9991");
-  const [nftContract, setNftContract] = useState("0xb9ab49e306b4a5CD610821Beba2f51e8F5a3C30f");
+  const [nftContract, setNftContract] = useState("0x60aDe2DBFC12fe45035EA9641e22952a8876410b");
   const assetTokenID = nft?.metadata.id;
   // below one depends on which chain to send
   const [xChainContract, setxChainContract] = useState('');
@@ -59,7 +59,7 @@ const Bridge721NFT = ({ nft }: Props) => {
   const [loading, setLoading] = useState(false);
 
   const [signer_address, setSigner_address] = useState("0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb");
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const provider = new ethers.providers.Web3Provider(window?.ethereum);
 
 // Get the signer
   const signer = provider.getSigner();
@@ -194,12 +194,13 @@ const Bridge721NFT = ({ nft }: Props) => {
 
             const sendXChainPolygon = await crossChainPolygon.XChainCall(
               domainID,
-              "32000",
+              "0",
               "5000",
               NFT_COLLECTION_ADDRESS,
               signer_address,
               AssetTokenID,
-              "true"
+              "true",
+              { gasLimit: 1000000 }
             );
 
             const Txnhash = await sendXChainPolygon.hash;
