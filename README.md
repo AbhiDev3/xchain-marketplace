@@ -60,4 +60,11 @@ https://goerli.etherscan.io/tx/0xaadc4f55953943e931da7ab75adaa9c16ca14564fddf3bd
 
 - Place bids/offers on NFTs from the marketplace on the [item](/pages/token/%5BcontractAddress%5D/%5BtokenId%5D.tsx) pages.
 
+## Technologies used
+
+Connext xchain calls for Bridging the NFT's along 3 Multiple chains.
+
+- https://mumbai.polygonscan.com/address/0xf093f0b60afcfb99283f68611225026470733200
+
+
 <br/>
