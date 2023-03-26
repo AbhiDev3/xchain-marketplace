@@ -7,12 +7,12 @@ import { useContract } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 import {xChainPolygonAbi} from "../hardhat/contracts/polygonAbi";
 import { BigNumber } from "ethers";
-import { create, SdkConfig } from "@connext/sdk";
+import { create, SdkBase, SdkConfig } from "@connext/sdk";
 
 
 
 const sdkConfig: SdkConfig = {
-  signerAddress: "0x2b8aA42fFb2c9c7B9f0B1e1b935F7D8331b6dC7c",
+  signerAddress: "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb",
   // Use `mainnet` when you're ready...
   network: "testnet",
   // Add more chains here! Use mainnet domains if `network: mainnet`.
@@ -65,17 +65,17 @@ const Bridge721NFT = ({ nft }: Props) => {
   const signer = provider.getSigner();
 
   
-  async function estimateRelayerFee() {
-    const relayerFee = (
-      await sdkBase.estimateRelayerFee({
-        9991 : Number, 
-        1735353714 : Number
-      })
-    ).toString();
+  // async function estimateRelayerFee(sdkBase) {
+  //   const relayerFee = (
+  //     await sdkBase.estimateRelayerFee({
+  //       9991 : Number, 
+  //       1735353714 : Number
+  //     })
+  //   ).toString();
 
-    console.log(relayerFee,"re");
-  }
-  estimateRelayerFee();
+  //   console.log(relayerFee,"re");
+  // }
+  // estimateRelayerFee(SdkBase);
 
  
 
@@ -194,7 +194,7 @@ const Bridge721NFT = ({ nft }: Props) => {
 
             const sendXChainPolygon = await crossChainPolygon.XChainCall(
               domainID,
-              "3200",
+              "32000",
               "5000",
               NFT_COLLECTION_ADDRESS,
               signer_address,
@@ -380,14 +380,14 @@ const Bridge721NFT = ({ nft }: Props) => {
                     {defaultDomain == true ? (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-amber-200 p-6 text-black"
                       >
                         <option>Polygon Mumbai</option>
                       </select>
                     ) : (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%]"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-amber-200 p-6 text-black"
                       >
                         <option>Ethereum Goerli </option>
                       </select>
@@ -412,14 +412,14 @@ const Bridge721NFT = ({ nft }: Props) => {
                     {defaultDomain == false ? (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%]"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300 p-6"
                       >
                         <option>Polygon Mumbai</option>
                       </select>
                     ) : (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%]"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300 p-6"
                       >
                         <option>Ethereum Goerli </option>
                       </select>

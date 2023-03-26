@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@connext/nxtp-utils": "^1.2.0-alpha.0",
-    "@connext/sdk": "^1.0.3-alpha.1",
+    "@connext/sdk": "^1.2.0-alpha.0",
     "@headlessui/react": "^1.7.8",
     "@hyperlane-xyz/hyperlane-token": "^1.2.0",
     "@hyperlane-xyz/sdk": "^1.2.0",
