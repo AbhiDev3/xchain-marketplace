@@ -22,9 +22,24 @@ Increased security: Cross-chain marketplaces can offer increased security by uti
 
 Scroll NFT_CONTRACT = 0x8d72887163f8bD8A65649Ef4af37dcc21500e5A1
 
+Marketplace Deployment Address
+
+Mumbai = 0xB6be599Bc1b29E562F5Fc358a59f6E80313C88b6
+
+Optimism = 0xF43989FcB43dAdF6A28214D4Ad5D9A7647fe7f62
+
+Mumbai New = 0xC0A1504202d74faa34eDb183BA0ab47C3b2cf36a 
+
+Xchain - Optimism => 0xa0C5D2d665869641E86c3d5fE3c9dB4FFF18F67b
+
+
 # Hyperlane Scroll Deployment
 
 ![image](https://user-images.githubusercontent.com/95926324/227232530-8d23e8a6-8c88-44d0-93fb-f41b8b8f40f4.png)
+
+ERC20 Interchain token deployed on Scroll via HYPERLANE = 0xe80E963D66252218C45299e3Cd42A71D3bb40477
+
+ERC721  Interchain token deployed on Scroll via HYPERLANE = 0x8d72887163f8bD8A65649Ef4af37dcc21500e5A1
 
 https://goerli.etherscan.io/tx/0xd1ef2a6b28c414d336867b21edd87673247430bedacfa1dddc9cf250b2469f31
 https://goerli.etherscan.io/tx/0x877b5bad5f8e619089c91e9616b69ed927803d630a207905fa3b6bdd41795eed
