@@ -7,16 +7,26 @@ import { NFT_COLLECTION_ADDRESS } from "../consts/contractAddresses";
 import { useContract } from "@thirdweb-dev/react";
 import { ethers } from "ethers";
 import {xChainPolygonAbi} from "../hardhat/contracts/polygonAbi";
-import { create } from "@connext/sdk";
 import { BigNumber } from "ethers";
-import { signer, sdkConfig } from "../config";
+import { create, SdkConfig } from "@connext/sdk";
 
-async function getsdk() {
-  const {sdkBase} = await create(sdkConfig);
-  const signerAddress = await signer.getAddress();
+
+
+const sdkConfig: SdkConfig = {
+  signerAddress: "0x2b8aA42fFb2c9c7B9f0B1e1b935F7D8331b6dC7c",
+  // Use `mainnet` when you're ready...
+  network: "testnet",
+  // Add more chains here! Use mainnet domains if `network: mainnet`.
+  // This information can be found at https://docs.connext.network/resources/supported-chains
+  chains: {
+    1735353714: { // Goerli domain ID
+      providers: ["https://rpc.ankr.com/eth_goerli"],
+    },
+    1735356532: { // Optimism-Goerli domain ID
+      providers: ["https://goerli.optimism.io"],
+    },
+  },
 };
-
-getsdk();
 
 
 type Props = {
@@ -24,6 +34,15 @@ type Props = {
 };
 
 const Bridge721NFT = ({ nft }: Props) => {
+
+  useEffect(() => {
+    const run = async () => {
+      const { sdkBase } = await create(sdkConfig);
+      console.log('sdkBase: ', sdkBase);
+    }
+    run();
+  })
+
   const { contract: collectioncontract } = useContract(
     NFT_COLLECTION_ADDRESS
   );

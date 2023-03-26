@@ -78,7 +78,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // console.log(activeChain);
   return (
-    <ThirdwebProvider activeChain={ScrollAlphaTestnet}>
+    <ThirdwebProvider activeChain={NETWORK}>
       {/* Progress bar when navigating between pages */}
       <NextNProgress
         color="var(--color-tertiary)"

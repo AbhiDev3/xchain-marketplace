@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   basePath: "",
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  },
   images: {
     remotePatterns: [
       {

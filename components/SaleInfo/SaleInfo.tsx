@@ -17,6 +17,7 @@ import {
 import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
 import toastStyle from "../../utils/toastConfig";
+import Bridge721NFT from "../../pages/Bridge721NFT";
 
 type Props = {
   nft: NFTType;
@@ -41,6 +42,7 @@ type DirectFormData = {
 
 export default function SaleInfo({ nft }: Props) {
   const router = useRouter();
+  console.log(nft);
   // Connect to marketplace contract
   const { contract: marketplace } = useContract(
     MARKETPLACE_ADDRESS,
@@ -61,7 +63,7 @@ export default function SaleInfo({ nft }: Props) {
     useCreateDirectListing(marketplace);
 
   // Manage form submission state using tabs and conditional rendering
-  const [tab, setTab] = useState<"direct" | "auction">("direct");
+  const [tab, setTab] = useState<"direct" | "auction" | "bridge" >("direct");
 
   // Manage form values using react-hook-form library: Auction form
   const { register: registerAuction, handleSubmit: handleSubmitAuction } =
@@ -162,6 +164,13 @@ export default function SaleInfo({ nft }: Props) {
             onClick={() => setTab("auction")}
           >
             Auction
+          </h3>
+          <h3
+            className={`${profileStyles.tab} 
+        ${tab === "auction" ? profileStyles.activeTab : ""}`}
+            onClick={() => setTab("bridge")}
+          >
+            Bridge
           </h3>
         </div>
 
@@ -304,6 +313,16 @@ export default function SaleInfo({ nft }: Props) {
           >
             Create Auction Listing
           </Web3Button>
+        </div>
+        <div
+          className={`${
+            tab === "bridge"
+              ? styles.activeTabContent
+              : profileStyles.tabContent
+          }`}
+          style={{ flexDirection: "column" }}
+        >
+          <Bridge721NFT nft={nft} />
         </div>
       </div>
     </>
