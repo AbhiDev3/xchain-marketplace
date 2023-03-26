@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import { Box, Button, Flex, Text, useToast, VStack } from "@chakra-ui/react";
 import { useState } from "react";
 import { IntmaxWalletSigner, NoRedirect } from "webmax";
