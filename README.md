@@ -20,20 +20,47 @@ Increased security: Cross-chain marketplaces can offer increased security by uti
 
 # MultiChain == Increased Liquidity across Multiple Chains
 
+## ERC-721 NFT Collections 
+
 Scroll NFT_CONTRACT = 0x8d72887163f8bD8A65649Ef4af37dcc21500e5A1
 
-Marketplace Deployment Address
+Gnosis NFT = 0x5F3eC562AD05A1395b43Fbf0098bB34ada4846c0
 
-Mumbai = 0xB6be599Bc1b29E562F5Fc358a59f6E80313C88b6
+https://blockscout.chiadochain.net/tx/0x0b45264c843bf151da9b4c779ef421f038ac026c5ee2dafcaa169b59b33d6c61
+
+Mantle NFT Collection = 0x977bb1ba20d6DF6E8a07178605C6A75618c705eF
+
+# Marketplace Deployment Address
+
+## scroll-alpha-testnet = 0x566795483507380aA2E25F60D8C93940392cc093
+
+Sample Listing Creation - https://blockscout.scroll.io/tx/0x6b26187ee88ab27dbd879cf75d485b738bd0175552fbd2a6c7d4bc0dda6aa1d0
+
+## Mumbai = 0xB6be599Bc1b29E562F5Fc358a59f6E80313C88b6
+
+## Gnosis Chaiado = 0xdf366B8FB6553E6F5826Ee6195cb9330A34442c1
+
+## Mantle = 0x8b24F9805c44B505319F681130E199c97fbD58d4
+https://explorer.testnet.mantle.xyz/address/0x8b24F9805c44B505319F681130E199c97fbD58d4
 
 Optimism = 0xF43989FcB43dAdF6A28214D4Ad5D9A7647fe7f62
 
-Mumbai New = 0xC0A1504202d74faa34eDb183BA0ab47C3b2cf36a 
+## Mumbai = 0xC0A1504202d74faa34eDb183BA0ab47C3b2cf36a 
 
 Xchain - Optimism => 0xa0C5D2d665869641E86c3d5fE3c9dB4FFF18F67b
 
 
 # Hyperlane Scroll Deployment
+
+## Bringing Scroll to Hyperlane
+
+Deployed addresses
+
+MultisigIsm deployed at address 0x0816d0C250EEf4FdF04997F62FaAe97D3E3f2b5d TestRecipient deployed at address 0x5681f7DBA81D068cA804d0b2aC4D3b00370A4dB0
+
+Messages sent https://explorer.hyperlane.xyz/message/5b6efc41945190f2d5e959fd23af25cc4fbf565a8b3c64c9714c990bfc884526
+
+RPC_URL=https://alpha-rpc.scroll.io/l2 
 
 ![image](https://user-images.githubusercontent.com/95926324/227232530-8d23e8a6-8c88-44d0-93fb-f41b8b8f40f4.png)
 

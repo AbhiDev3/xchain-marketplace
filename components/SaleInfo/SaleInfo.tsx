@@ -18,6 +18,7 @@ import { useRouter } from "next/router";
 import toast, { Toaster } from "react-hot-toast";
 import toastStyle from "../../utils/toastConfig";
 import Bridge721NFT from "../../pages/Bridge721NFT";
+import { useDirectListingsCount } from "@thirdweb-dev/react";
 
 type Props = {
   nft: NFTType;
@@ -43,6 +44,7 @@ type DirectFormData = {
 export default function SaleInfo({ nft }: Props) {
   const router = useRouter();
   console.log(nft);
+
   // Connect to marketplace contract
   const { contract: marketplace } = useContract(
     MARKETPLACE_ADDRESS,
@@ -59,8 +61,17 @@ export default function SaleInfo({ nft }: Props) {
     useCreateAuctionListing(marketplace);
 
   // Hook provides an async function to create a new direct listing
-  const { mutateAsync: createDirectListing } =
-    useCreateDirectListing(marketplace);
+  const {
+    mutate: createDirectListing
+  } = useCreateDirectListing(marketplace);
+
+  const { data: directListingsCount, isLoading, error } = useDirectListingsCount(marketplace);
+
+  console.log(directListingsCount,'count');
+
+
+
+  console.log(createDirectListing, isLoading, error);
 
   // Manage form submission state using tabs and conditional rendering
   const [tab, setTab] = useState<"direct" | "auction" | "bridge" >("direct");
@@ -135,6 +146,8 @@ export default function SaleInfo({ nft }: Props) {
 
   async function handleSubmissionDirect(data: DirectFormData) {
     await checkAndProvideApproval();
+    console.log(data,data.nftContractAddress,"kl");
+
     const txResult = await createDirectListing({
       assetContractAddress: data.nftContractAddress,
       tokenId: data.tokenId,
@@ -149,7 +162,7 @@ export default function SaleInfo({ nft }: Props) {
   return (
     <>
       <Toaster position="bottom-center" reverseOrder={false} />
-      <div className={styles.saleInfoContainer} style={{ marginTop: -42 }}>
+      <div className={styles.saleInfoContainer} style={{ marginTop: 10 }}>
         <div className={profileStyles.tabs}>
           <h3
             className={`${profileStyles.tab} 
