@@ -76,13 +76,15 @@ function Timeline({
   const { stage, timings, message } = useMessageTimeline({
     originTxHash: originTxHash || undefined,
   });
+
+  console.log(message);
   return (
     <div className="mt-4 mb-2 w-full flex flex-col justify-center items-center timeline-container">
       <MessageTimeline
         status={message?.status || MessageStatus.Pending}
         stage={stage}
         timings={timings}
-        timestampSent={message?.originTransaction.timestamp}
+        timestampSent={message?.origin?.timestamp }
         hideDescriptions={true}
       />
       {isAccountReady ? (
