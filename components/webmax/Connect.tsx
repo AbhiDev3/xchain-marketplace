@@ -39,11 +39,11 @@ export const Connect = () => {
       <VStack spacing={6}>
         <Button onClick={handleConnect}>Connect to account</Button>
         <Box wordBreak="break-word">
-          <VStack spacing={4}>
+          {/* <VStack spacing={4}>
             <Text>address: {result?.address}</Text>
             <Text>chainId: {result?.chainId}</Text>
             <Text>publicKey: {result?.publicKey}</Text>
-          </VStack>
+          </VStack> */}
         </Box>
       </VStack>
     </Flex>

@@ -2,7 +2,7 @@ import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-
+import { Connect } from "../webmax/Connect";
 /**
  * Navigation bar that shows up on all pages.
  * Rendered in _app.tsx file above the page content.
@@ -39,6 +39,7 @@ export function Navbar() {
         <div className={styles.navRight}>
           <div className={styles.navConnect}>
             <ConnectWallet />
+            <Connect />
           </div>
           {address && (
             <Link className={styles.link} href={`/profile/${address}`}>
