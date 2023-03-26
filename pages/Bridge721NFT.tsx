@@ -194,7 +194,7 @@ const Bridge721NFT = ({ nft }: Props) => {
 
             const sendXChainPolygon = await crossChainPolygon.XChainCall(
               domainID,
-              "0",
+              "32000",
               "5000",
               NFT_COLLECTION_ADDRESS,
               signer_address,
