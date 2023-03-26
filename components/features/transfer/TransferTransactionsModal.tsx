@@ -84,7 +84,6 @@ function Timeline({
         status={message?.status || MessageStatus.Pending}
         stage={stage}
         timings={timings}
-        timestampSent={message?.origin?.timestamp }
         hideDescriptions={true}
       />
       {isAccountReady ? (

@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                 >
                   Connext
                 </Link>{" "}
-                
+                Hyperlane Scroll Mantle
               </p>
 
               <div className={styles.heroCtaContainer}>
