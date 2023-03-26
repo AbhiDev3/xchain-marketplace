@@ -11,8 +11,11 @@
     "deploy": "next build && next export && npx thirdweb@latest upload out"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.5.3",
     "@connext/nxtp-utils": "^1.2.0-alpha.0",
     "@connext/sdk": "^1.2.0-alpha.0",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@headlessui/react": "^1.7.8",
     "@hyperlane-xyz/hyperlane-token": "^1.2.0",
     "@hyperlane-xyz/sdk": "^1.2.0",
@@ -27,6 +30,7 @@
     "autoprefixer": "^10.4.14",
     "ethers": "^5.7.2",
     "formik": "^2.2.9",
+    "framer-motion": "^10.9.1",
     "install": "^0.13.0",
     "next": "^13",
     "nextjs-progressbar": "^0.0.16",
@@ -36,7 +40,8 @@
     "react-dom": "^18.2",
     "react-hook-form": "^7.43.0",
     "react-hot-toast": "^2.4.0",
-    "wagmi": "^0.11.7"
+    "wagmi": "^0.11.7",
+    "webmax": "^0.1.10"
   },
   "devDependencies": {
     "@types/node": "^18.11.11",

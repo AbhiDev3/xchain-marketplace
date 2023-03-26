@@ -28,7 +28,33 @@ import { ScrollAlphaTestnet } from "@thirdweb-dev/chains";
 // wagmi configs setup
 const { chains, provider } = configureChains(getWagmiChainConfig(), [publicProvider()]);
 import { useContract } from "@thirdweb-dev/react";
+// chakra ui
 import { NFT_COLLECTION_ADDRESS } from "../consts/contractAddresses";
+import {
+  Box,
+  ChakraProvider,
+  Flex,
+  Grid,
+  HStack,
+  Image,
+  Link as ChakraLink,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+  theme,
+  useColorModeValue,
+  VStack,
+} from "@chakra-ui/react";
+//   import { ColorModeSwitcher } from "./ColorModeSwitcher";
+import { Connect } from "../components/webmax/Connect";
+import logo from "./logo.png";
+import { SendTransaction } from "../components/webmax/SendTransaction";
+import { SignMessage } from "../components/webmax/SignMessage";
+import { SignTransaction } from "../components/webmax/SignTransaction";
+import { Webmax } from "../components/webmax/Webmax";
 
 const connectorConfig = {
   appName: 'X-chain Gaming NFT',
@@ -75,9 +101,14 @@ const reactQueryClient = new QueryClient({
 function MyApp({ Component, pageProps }: AppProps) {
   // const [activeChain, setActiveChain] = useState<string>(NETWORK);
   const [signer_address,setSigner_address]= useState('0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb');
+  const [tabIndex, setTabIndex] = useState(0);
+  const handleTabsChange = (index: number) => {
+    setTabIndex(index);
+  };
 
   // console.log(activeChain);
   return (
+    <ChakraProvider theme={theme}>
     <ThirdwebProvider activeChain={NETWORK}>
       {/* Progress bar when navigating between pages */}
       <NextNProgress
@@ -102,11 +133,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Navbar />
           {/* Render the actual component (page) */}
           <Component {...pageProps}   />
+          <Webmax />
           </QueryClientProvider>
           {/* <ToastContainer transition={Zoom} position={toast.POSITION.BOTTOM_RIGHT} limit={2} /> */}
           </RainbowKitProvider>
         </WagmiConfig>
     </ThirdwebProvider>
+    </ChakraProvider>
   );
 }
 
