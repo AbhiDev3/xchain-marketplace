@@ -63,7 +63,7 @@ const Home: NextPage = () => {
                 >
                   Connext
                 </Link>{" "}
-                Hyperlane Scroll Mantle
+                Hyperlane Scroll Mantle Gnosis Taiko
               </p>
 
               <div className={styles.heroCtaContainer}>

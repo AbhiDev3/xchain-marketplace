@@ -72,13 +72,15 @@ const reactQueryClient = new QueryClient({
 
 
 
+
+
 function MyApp({ Component, pageProps }: AppProps) {
   // const [activeChain, setActiveChain] = useState<string>(NETWORK);
   const [signer_address,setSigner_address]= useState('0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb');
 
   // console.log(activeChain);
   return (
-    <ThirdwebProvider activeChain={NETWORK}>
+    <ThirdwebProvider activeChain={NETWORK} supportedChains = {[ScrollAlphaTestnet]}>
       {/* Progress bar when navigating between pages */}
       <NextNProgress
         color="var(--color-tertiary)"

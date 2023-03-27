@@ -1,6 +1,9 @@
 # X-Chain Gaming NFT Marketplace
+Unlock limitless possibilities with our Cross-Chain Gaming NFT Marketplace - Where every NFT is a masterpiece Game Asset waiting to be discovered.
 
 Earn through your in-game assets by listing them on Our X-Chain Marketplace and take your NFT's with you to whichever Chain you wish.
+
+
 
 ![marketplace](https://user-images.githubusercontent.com/95926324/227322157-928accde-e02c-4369-bfa9-0f15aa2b7258.png)
 

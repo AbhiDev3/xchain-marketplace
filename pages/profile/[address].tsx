@@ -26,7 +26,7 @@ const [randomColor1, randomColor2, randomColor3, randomColor4] = [
 
 export default function ProfilePage() {
   const router = useRouter();
-  const [tab, setTab] = useState<"nfts" | "listings" | "auctions">("nfts");
+  const [tab, setTab] = useState<"nfts" | "listings" | "auctions" | "bridged nfts">("nfts");
 
   const { contract: nftCollection } = useContract(NFT_COLLECTION_ADDRESS);
 
@@ -97,6 +97,13 @@ export default function ProfilePage() {
           onClick={() => setTab("auctions")}
         >
           Auctions
+        </h3>
+        <h3
+          className={`${styles.tab}
+        ${tab === "bridged nfts" ? styles.activeTab : ""}`}
+          onClick={() => setTab("bridged nfts")}
+        >
+          Bridged nfts
         </h3>
       </div>
 
