@@ -25,6 +25,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { getWagmiChainConfig } from '../components/features/chains/metadata';
 import { Color } from '../styles/Color';
 import { ScrollAlphaTestnet } from "@thirdweb-dev/chains";
+import { Mantle , ChiadoTestnet  , MantleTestnet  } from "@thirdweb-dev/chains";
 // wagmi configs setup
 const { chains, provider } = configureChains(getWagmiChainConfig(), [publicProvider()]);
 import { useContract } from "@thirdweb-dev/react";
@@ -80,7 +81,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   // console.log(activeChain);
   return (
-    <ThirdwebProvider activeChain={NETWORK} supportedChains = {[ScrollAlphaTestnet]}>
+    <ThirdwebProvider activeChain={NETWORK} supportedChains = {[ScrollAlphaTestnet , MantleTestnet , ChiadoTestnet]}>
       {/* Progress bar when navigating between pages */}
       <NextNProgress
         color="var(--color-tertiary)"
