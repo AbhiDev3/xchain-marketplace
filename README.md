@@ -115,4 +115,6 @@ https://goerli.etherscan.io/tx/0xaadc4f55953943e931da7ab75adaa9c16ca14564fddf3bd
 
 - Place bids/offers on NFTs from the marketplace on the [item](/pages/token/%5BcontractAddress%5D/%5BtokenId%5D.tsx) pages.
 
+- Briding NFT's via Connext on the Sell pg under Bridge Tab 
 
+- Bridging interchain Tokens and NFT's via Hyperlane on the [buy](/pages/bridge.tsx) page 
