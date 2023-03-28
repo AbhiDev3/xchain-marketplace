@@ -2,6 +2,7 @@ import { Signer, providers } from 'ethers';
 
 import { HypERC20Collateral__factory, HypERC20__factory } from '@hyperlane-xyz/hyperlane-token';
 
+
 export function getHypErc20CollateralContract(
   contractAddress: Address,
   signerOrProvider: Signer | providers.Provider,

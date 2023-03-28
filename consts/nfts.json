@@ -1,0 +1,24 @@
+{
+    "name": "erc721 tokens",
+    "timestamp": "2022-12-23T12:00:00.000Z",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+    },
+    "tags": {},
+    "logoURI": "https://www.hyperlane.xyz/logo-blue.png",
+    "keywords": ["hyperlane", "default"],
+    "tokens": [
+      {
+        "chainId": 80001,
+        "address": "0x60aDe2DBFC12fe45035EA9641e22952a8876410b",
+        "name": "Gaming NFTs",
+        "symbol": "GAMS",
+        "decimals": 18,
+        "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/logo.png",
+        "hypCollateralAddress": "0x445D1fFF339c9BfBb341c702a48cDD1588E72792"
+      }
+    ]
+  }
+  

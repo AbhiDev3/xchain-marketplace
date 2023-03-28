@@ -8,8 +8,8 @@ import { ethers } from "ethers";
 import {xChainPolygonAbi} from "../hardhat/contracts/polygonAbi";
 import { BigNumber } from "ethers";
 import { create, SdkBase, SdkConfig } from "@connext/sdk";
-
-
+import SwapIcon from "../components/Icons/SwapIcon";
+import { IconButton } from "../components/buttons/IconButton";
 
 const sdkConfig: SdkConfig = {
   signerAddress: "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb",
@@ -424,7 +424,14 @@ const Bridge721NFT = ({ nft }: Props) => {
                       className="mt-10 mb-10 flex align-middle justify-center"
                       type="button"
                     >
-                      Connext
+                      Connext     
+                      <IconButton
+                      imgSrc={SwapIcon}
+                      width={22}
+                      height={22}
+                      title="Swap chains"
+                      classes={!disabled ? 'hover:rotate-180' : undefined}
+                    />
                     </button>
 
                     <div>

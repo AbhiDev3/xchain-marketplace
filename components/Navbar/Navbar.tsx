@@ -30,8 +30,12 @@ export function Navbar() {
             <Link href="/sell" className={styles.link}>
               Sell
             </Link>
-            <Link href="/bridge" className={styles.link}>
-              Bridge
+            {/* hyperlane bridges */}
+            <Link href="/bridgetokens" className={styles.link}>
+              Bridge Tokens
+            </Link>
+            <Link href="/hyperlanebridge" className={styles.link}>
+              Bridge NFT
             </Link>
           </div>
         </div>
