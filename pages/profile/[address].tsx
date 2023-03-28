@@ -127,7 +127,7 @@ export default function ProfilePage() {
         {loadingDirects ? (
           <p>Loading...</p>
         ) : directListings && directListings.length === 0 ? (
-          <p>Nothing for sale yet! Head to the sell tab to list an NFT.</p>
+          <p>Nothing for sale yet! Head to the sell page to list an NFT.</p>
         ) : (
           directListings?.map((listing) => (
             <ListingWrapper listing={listing} key={listing.id} />
@@ -143,7 +143,7 @@ export default function ProfilePage() {
         {loadingAuctions ? (
           <p>Loading...</p>
         ) : auctionListings && auctionListings.length === 0 ? (
-          <p>Nothing for sale yet! Head to the sell tab to list an NFT.</p>
+          <p>Nothing for sale yet! Head to the sell page to list an NFT.</p>
         ) : (
           auctionListings?.map((listing) => (
             <ListingWrapper listing={listing} key={listing.id} />

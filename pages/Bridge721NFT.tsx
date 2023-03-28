@@ -13,10 +13,8 @@ import { create, SdkBase, SdkConfig } from "@connext/sdk";
 
 const sdkConfig: SdkConfig = {
   signerAddress: "0x0439427C42a099E7E362D86e2Bbe1eA27300f6Cb",
-  // Use `mainnet` when you're ready...
+  // to do mainnet
   network: "testnet",
-  // Add more chains here! Use mainnet domains if `network: mainnet`.
-  // This information can be found at https://docs.connext.network/resources/supported-chains
   chains: {
     1735353714: { // Goerli domain ID
       providers: ["https://rpc.ankr.com/eth_goerli"],
@@ -24,6 +22,9 @@ const sdkConfig: SdkConfig = {
     1735356532: { // Optimism-Goerli domain ID
       providers: ["https://goerli.optimism.io"],
     },
+    9991: {
+      providers: ["https://polygon-testnet.public.blastapi.io"]
+    }
   },
 };
 
@@ -37,7 +38,7 @@ const Bridge721NFT = ({ nft }: Props) => {
   useEffect(() => {
     const run = async () => {
       const { sdkBase } = await create(sdkConfig);
-      console.log('sdkBase: ', sdkBase);
+      console.log('sdkBase: ', sdkBase.estimateRelayerFee);
     }
     run();
   })
@@ -138,7 +139,7 @@ const Bridge721NFT = ({ nft }: Props) => {
             // )
             // relayerMain = relayerFee;
           }
-          if (domainID == "9991") {
+          else if (domainID == "9991") {
             // const calcrelayerFee = (
             //   await sdkBase.estimateRelayerFee({
             //     originDomain: goerliDomain,
@@ -179,7 +180,17 @@ const Bridge721NFT = ({ nft }: Props) => {
               xChainID = 80001;
               await approveHashiTxn;
             }
-          } catch (error) {
+            else if (domainID == "1735356532") {
+              const approveHashiTxn = await collectioncontract.setApprovalForAll(
+                x_hashi_goerli,
+                true
+              );
+              fromChainID = 5;
+              xChainID = 80001;
+              await approveHashiTxn;  
+            } 
+          }
+          catch (error) {
             console.log({ approveError: error });
           }
     
@@ -348,15 +359,18 @@ const Bridge721NFT = ({ nft }: Props) => {
     if (chainIdMain == "5") {
       setDomainID("9991");
     }
-    if (chainIdMain == "80001") {
+    else if (chainIdMain == "80001") {
       setDomainID("1735353714");
+    }
+    else if(chainIdMain == "420"){
+      setDomainID("1735356532");
     }
   }, [showSelectNFT, chainIdMain]);
 
   return (
     <>
       <Head>
-        <title>Bridge NFT - using Connext </title>
+        <title>Bridge NFT - using Connext Amarok </title>
         <meta name="description" content="Bridge721 NFT" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.png" />
@@ -365,9 +379,9 @@ const Bridge721NFT = ({ nft }: Props) => {
       {isNFTBridged == false && (
         <>
           {showSelectNFT == false && (
-            <form className="relative py-24">
+            <form className="relative py-8">
               <div className="container">
-                <h1 className="pt-16 text-center font-display text-4xl font-medium text-jacarta-700 ">
+                <h1 className="pt-2 text-center font-display text-4xl font-medium text-jacarta-700 ">
                   Bridge Your NFTs
                 </h1>
                 <p className="mb-16 mt-2 text-center text-sm font-medium text-jacarta-700">
@@ -377,7 +391,7 @@ const Bridge721NFT = ({ nft }: Props) => {
                   {/* select collection  */}
                   <div className="relative">
                     <div>
-                      <label className="mb-1 block font-display text-jacarta-700 dark:text-white">
+                      <label className="mb-1 block font-display text-jacarta-700 dark:text-white rounded-lg">
                         Origin Chain
                       </label>
                       <div className="mb-2 flex items-center space-x-2">
@@ -389,16 +403,17 @@ const Bridge721NFT = ({ nft }: Props) => {
                     {defaultDomain == true ? (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%] bg-amber-200 p-6 text-black"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-amber-200 p-6 text-black border-dashed rounded-lg"
                       >
                         <option>Polygon Mumbai</option>
                       </select>
                     ) : (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%] bg-amber-200 p-6 text-black"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-amber-200 p-6 text-black border-dashed rounded-lg"
                       >
                         <option>Ethereum Goerli </option>
+                        <option>Optimism Goerli </option>
                       </select>
                     )}
 
@@ -413,7 +428,7 @@ const Bridge721NFT = ({ nft }: Props) => {
                     </button>
 
                     <div>
-                      <label className="mb-2 block font-display text-jacarta-700 dark:text-white">
+                      <label className="mb-2 block font-display text-jacarta-700 dark:text-white border-dashed rounded-lg">
                         To Destination Chain
                       </label>
                     </div>
@@ -421,16 +436,17 @@ const Bridge721NFT = ({ nft }: Props) => {
                     {defaultDomain == false ? (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300 p-6"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300 p-6 border-dashed rounded-lg"
                       >
                         <option>Polygon Mumbai</option>
                       </select>
                     ) : (
                       <select
                         name="collection"
-                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300 p-6"
+                        className="dropdown my-1 cursor-pointer w-[100%] bg-green-300 p-6 border-dashed rounded-lg"
                       >
                         <option>Ethereum Goerli </option>
+                        <option>Optimism Goerli </option>
                       </select>
                     )}
                   </div>
@@ -462,7 +478,7 @@ const Bridge721NFT = ({ nft }: Props) => {
       {isNFTBridged == true && (
         <div className="flex flex-col justify-center w-full mt-44 mb-44">
           <p className="mb-2 mt-2 text-center text-xl font-medium text-jacarta-700">
-            Amazing NFT  bridged successfull , see it on the other side
+            Amazing NFT  bridged successfull 🚀🚀 , see it on the other side
           </p>
         </div>
       )}

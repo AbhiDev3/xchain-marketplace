@@ -180,7 +180,7 @@ export default function SaleInfo({ nft }: Props) {
           </h3>
           <h3
             className={`${profileStyles.tab} 
-        ${tab === "auction" ? profileStyles.activeTab : ""}`}
+        ${tab === "bridge" ? profileStyles.activeTab : ""}`}
             onClick={() => setTab("bridge")}
           >
             Bridge
