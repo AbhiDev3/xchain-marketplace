@@ -11,6 +11,8 @@ Our X-chain marketplaces provides several advantages over traditional Marketplac
 
 1> Users can earn through your in-game assets by listing it on the platform . 
 
+* The plus point is Users get the ability to list their NFT's for Bidding in Multiple Currencies too.
+
 Aiming to solve problems reflected by Game7 https://cdn.game7.io/reports/Game-Developer-Report-by-Game7.pdf.
 
 2> Walletless Onboarding for the users via Intmax https://github.com/legendarykamal/xchain-marketplace/pull/2 , this further opens the possibilities of mainstream adoption as users would be able to use the platform with phones and the best UX.
@@ -118,3 +120,11 @@ https://goerli.etherscan.io/tx/0xaadc4f55953943e931da7ab75adaa9c16ca14564fddf3bd
 - Briding NFT's via Connext on the Sell pg under Bridge Tab 
 
 - Bridging interchain Tokens and NFT's via Hyperlane on the [buy](/pages/bridge.tsx) page 
+
+## Whats the Future for Our X-Chain Marketplace
+
+- Utilising Hyperlane Queries to transfer Interchain msges among users on different blockchains.
+
+- Adding Support for Rentable Nfts on the platform.
+
+- Adding more tokens on the platform and support for more chains.
