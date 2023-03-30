@@ -8,7 +8,7 @@ import { ethers } from "ethers";
 import {xChainPolygonAbi} from "../hardhat/contracts/polygonAbi";
 import { BigNumber } from "ethers";
 import { create, SdkBase, SdkConfig } from "@connext/sdk";
-import SwapIcon from "../components/Icons/SwapIcon";
+import SwapIcon from "../components/images/icons/swap.svg";
 import { IconButton } from "../components/buttons/IconButton";
 
 const sdkConfig: SdkConfig = {
@@ -73,20 +73,6 @@ const Bridge721NFT = ({ nft }: Props) => {
 
 
 
-  
-  // async function estimateRelayerFee(sdkBase) {
-  //   const relayerFee = (
-  //     await sdkBase.estimateRelayerFee({
-  //       9991 : Number, 
-  //       1735353714 : Number
-  //     })
-  //   ).toString();
-
-  //   console.log(relayerFee,"re");
-  // }
-  // estimateRelayerFee(SdkBase);
-
- 
 
   // xChain address
   const x_chain_polygon_address = "0xF093F0b60AfCFB99283F68611225026470733200";
@@ -127,28 +113,6 @@ const Bridge721NFT = ({ nft }: Props) => {
           const polyDomain = "9991";
           const opDomain = "1735356532";
           const goerliDomain = "1735353714";
-
-
-    
-          if (domainID == "1735353714") {
-            // const relayerFee = (
-            //   await sdkBase.estimateRelayerFee({
-            //     originDomain: polygonDomain,
-            //     destinationDomain: domainID
-            //   })
-            // )
-            // relayerMain = relayerFee;
-          }
-          else if (domainID == "9991") {
-            // const calcrelayerFee = (
-            //   await sdkBase.estimateRelayerFee({
-            //     originDomain: goerliDomain,
-            //     destinationDomain: domainID
-            //   })
-            // )
-            // setRelayerFee(calcrelayerFee);
-          }
-    
           // approving contract
           let fromChainID = 0;
           let xChainID = 0;
@@ -198,8 +162,6 @@ const Bridge721NFT = ({ nft }: Props) => {
           // sending xchain call
           try {
             const crossChainPolygon = xChain_Contract_Call(xChainContract, signer);
-            
-            
             console.log('here',
             domainID,
             32000,
@@ -235,77 +197,7 @@ const Bridge721NFT = ({ nft }: Props) => {
         }
       };
 
-  const switchPolygonChain = async () => {
-    try {
-      await window.ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x13881" }],
-      });
-      setChainIdMain("80001");
-      setShowSelectNFT(true);
-    } catch (error) {
-      if (error.code === 4902) {
-        try {
-          await window.ethereum.request({
-            method: "wallet_addEthereumChain",
-            params: [
-              {
-                chainId: "0x13881",
-                chainName: "Mumbai",
-                nativeCurrency: {
-                  name: "Polygon",
-                  symbol: "MATIC",
-                  decimals: 18,
-                },
-                blockExplorerUrls: ["https://polygonscan.com/"],
-                rpcUrls: ["https://matic-mumbai.chainstacklabs.com"],
-              },
-            ],
-          });
-          setChainIdMain("80001");
-          setShowSelectNFT(true);
-        } catch (addError) {
-          console.error(addError);
-        }
-      }
-    }
-  };
 
-  const switchGoerliChain = async () => {
-    try {
-      await window.ethereum.request({
-        method: "wallet_switchEthereumChain",
-        params: [{ chainId: "0x5" }],
-      });
-      setChainIdMain("5");
-      setShowSelectNFT(true);
-    } catch (error) {
-      if (error.code === 4902) {
-        try {
-          await window.ethereum.request({
-            method: "wallet_addEthereumChain",
-            params: [
-              {
-                chainId: "0x5",
-                chainName: "Goerli Testnet",
-                nativeCurrency: {
-                  name: "Goerli Testnet",
-                  symbol: "ETH",
-                  decimals: 18,
-                },
-                blockExplorerUrls: ["https://goerli.etherscan.io/"],
-                rpcUrls: ["https://rpc.ankr.com/eth_goerli"],
-              },
-            ],
-          });
-          setChainIdMain("5");
-          setShowSelectNFT(true);
-        } catch (addError) {
-          console.error(addError);
-        }
-      }
-    }
-  };
 
   const handleSubmitSelectChain = async (e) => {
     console.log(defaultDomain,chainIdMain,"e")
